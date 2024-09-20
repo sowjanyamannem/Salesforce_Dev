@@ -1,0 +1,62 @@
+<template>
+            <lightning-card>
+               <lightning-card  id="path" title="lightning-Path" icon-name="standard:status-path">
+                    <lightning-progress-indicator  current-step={currentvalue} type="path" variant="base">
+                        <template for:each={options} for:item="stage">
+                            <lightning-progress-step label={stage.label} value={stage.value} key={stage.value} onchange={callbranch} ></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator>
+                    <!-- <br>
+                    Selected Value is : <b>{selectedvalue}</b> -->
+                </lightning-card>
+
+            <lightning-card title="the details of education"  icon-name="custom-02">
+                         
+                    <!-- <lightning-layout    horizontal-align={horizontalAlign}> -->
+                        <!-- <div class="slds-col slds-size_1-of-2"> -->
+                    <lightning-input label="Details Name" placeholder="Enter the Details Name" onchange={handlesavefn}></lightning-input>
+                    <lightning-input  label="Person Name"  placeholder="Enter the Person Name"  onchange={handlesaveln}></lightning-input>
+                <!-- </div>    -->
+                    <!-- </lightning-layout> -->
+                    <!-- <div class="slds-col slds-size_1-of-3">  -->
+                        <lightning-input  label="Email"      placeholder="Enter the Mail" onchange={handlesavemail}></lightning-input>
+                        <lightning-input label="phone"  placeholder="enter the phone " onchange={handlesavephone}></lightning-input>
+                        <lightning-combobox name="branch" label=" education status " value={selectedValue} options={options} onchange={callbranch}></lightning-combobox>                  
+                    <!-- </div> -->
+                    
+                <!-- </div > -->
+                <br>
+                <div align="Center">
+                <lightning-button variant="brand" label="Save"  onclick={handleClick}  class="slds-m-left_medium"></lightning-button>
+                </div>
+
+            </lightning-card>
+            </lightning-card>
+
+
+                <lightning-card>
+                    <p>{activeSectionsMessage}</p>
+                    <lightning-accordion
+            allow-multiple-sections-open>
+            <template if:true={callbranch}>
+            <lightning-accordion-section name="A" label="Accordion Title A">
+                <p>Fill The Details Related the Completed Option</p>
+                <lightning-input label=" aadhar Number " required="Please fill the aadhar Number"  placeholder="aadhar Number" onchange={handlenumber}></lightning-input>
+                <lightning-input  label=" pan card "  required=" Fill the pan card number "  placeholder="pan card number" onchange={handlethecard}></lightning-input>
+                <lightning-input  label="id Number"  onchange={handleid}   ></lightning-input>
+            </lightning-accordion-section>
+            </template>
+        </lightning-accordion> 
+
+                </lightning-card>
+
+               
+                    <lightning-card title="File Upload Demo Lwc"  icon-name="custom:custom13">
+                      <div class="slds-m-around_medium">
+                          <lightning-input  type="file"  label="Attachment"  onchange={handlefile}></lightning-input>
+                      </div>
+
+                    </lightning-card>
+                
+
+        </template>

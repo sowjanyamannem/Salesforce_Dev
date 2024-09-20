@@ -1,0 +1,15 @@
+<template>
+
+    <lightning-card>
+        <div>
+        
+        <lightning-input label="Name" onchange={name1} ></lightning-input>
+        <lightning-combobox name="Success Code"  label="Success Code" value={value} onchange={Successcode} options={options}></lightning-combobox>
+        
+        <!-- <lightning-input label="Account" onchange={getAccount} > </lightning-input> --> 
+        <lightning-input label="Message" onchange={getmessage} ></lightning-input> 
+        <lightning-button label="create the record" onclick={createthe_record}></lightning-button>
+        </div>
+    </lightning-card>
+    
+</template>

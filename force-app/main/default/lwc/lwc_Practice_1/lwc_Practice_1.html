@@ -1,0 +1,43 @@
+<template>
+    <lightning-card >
+        <lightning-input label="search accounts" type="search" value={SearchKey} onchange={searchhandle}></lightning-input>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+            <thead>
+               <tr class="slds-line-height_reset">
+                  <th class="" scope="col">
+                     <div class="slds-truncate" title="Name">Name</div>
+                  </th>
+                  
+                  </tr>
+            </thead>
+                  
+            </table>
+                    <template lwc:if={showsearchedvalue} >
+                    <template   for:each={accountsacc} for:item="acc" >
+                        <ul key={acc.Id}>
+                    <!-- <template key={acc.Id}> -->
+                        <li key={acc.Id}  onclick={handleClick}  >
+                            <!-- <lightning-badge label="Alpha" icon-name="standard:event"></lightning-badge> -->
+                            <!-- <lightning-badge key={acc.Id}> -->
+                                <!-- <lightning-pill items={seletedRecords} label={selectedrecord.Name} data-recid={acc.Id}  name={recId}   onremove={handleRemoveOnly}>  >
+                                    <lightning-icon icon-name="standard:account" type="icon"  alternative-text="Account" onremove={handleRemove}></lightning-icon> -->
+                            <lightning-pill-container items={selectedrecords}></lightning-pill-container>
+                                    <!-- <div class="slds-truncate">{acc.Name}</div> -->
+                            </lightning-pill>
+                        <!-- </lightning-badge> -->
+                        <span data-recid={acc.Id}  >{acc.Name}</span>
+                    <!-- </template> -->
+                    </li>
+                </ul>
+                </template>
+            </template>
+                
+                <lightning-button variant="brand" label="Get Contact"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                <template   for:each={reccontacts} for:item="con">
+                <lightning-input key={con.Id} type="radio"   value={con.LastName}  onchange={onchangehandleradio}></lightning-input>
+                <td>{con.LastName}</td>
+
+                </template>
+    </lightning-card>
+    
+</template>

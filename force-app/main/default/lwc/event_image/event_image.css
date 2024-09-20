@@ -1,0 +1,41 @@
+
+
+.example{
+    /* background-image: url('c:/Users/DELL/Downloads/event1.jpg');
+    background-size: cover; 
+    background-position: center;
+    height: 300px;
+    width: 100%; */
+    /* bg-image: url('event1.JPG'); */
+    /* padding: 20px; */
+    border: 1px solid #ccc;
+    /* background-size: cover; */
+    background-image: url('/resource/image/image.jpeg');
+    background-position: center;
+    /* height: 50vh; */
+    /* width: 100%; */
+       /* background-origin: border-box;  */
+    /* background-repeat: no-repeat;
+    /* background-image: url('/resource/image/image.jpeg'); */
+
+
+}
+
+.datainhtml{
+    color:rgb(253, 252, 246);
+    padding-left: 40px;
+    font-size:45px;
+    /* font-size: large; */
+}
+
+.datainhtml1{
+    color: rgb(241, 237, 233);
+    padding-left: 40px;
+    font-size:15px;
+    border-radius: 25px;
+}
+
+.buttoncss{
+    color:black;
+    padding-left: 550px;
+}

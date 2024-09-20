@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <template if:true={showSpinner}>
+            <lightning-spinner  alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+        <lightning-input class="slds-m-around_medium" type="text" placeholder="Enter term text here " onkeydown={handleEnterchange}></lightning-input>
+        <template if:true={searchChatResult}>
+            <lightning-formatted-rich-text value={searchChatResult}> </lightning-formatted-rich-text>
+
+        </template>
+   
+   
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,17 @@
+<template>
+   
+    <lightning-card  title=" To Send The Mail By Giving The Input">
+       
+   
+    <lightning-input label="From Address"  placeholder="abc@email.com"    type="email" required="Complete this field"  onchange={fromaddress}></lightning-input>
+    <lightning-input label="To Address"    placeholder="abc@email.com"    type="email"  required="Complete this field "  onchange={toaadderss}></lightning-input>
+    <lightning-input label="Cc"></lightning-input>
+    <lightning-input label="Subject"></lightning-input>
+    <lightning-input-rich-text title="Mail Body"></lightning-input-rich-text>
+    <lightning-button label="Send"   title="send"  onclick={handlesaveme}  variant="brand" ></lightning-button>
+    <lightning-button label="Reset" onclick={resetme}></lightning-button>
+   
+     
+
+  </lightning-card> 
+</template>

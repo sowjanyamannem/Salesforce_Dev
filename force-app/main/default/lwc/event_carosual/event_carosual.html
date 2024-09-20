@@ -1,0 +1,25 @@
+<template>
+    <div   >
+        <div class="slds-box slds-box_x-large slds-align_center slds-m-around_x-large">Basic Carousel
+           <lightning-carousel  custom-height="500px" custom-width="100%"  align="center" scroll-duration="5">
+               
+                    <lightning-carousel-image 
+                                            
+                                              src={image1} 
+                                              header="First Card"
+                                              description="First card accessible decription."
+                                              href="javascript:void(0);"></lightning-carousel-image>
+                                              <lightning-carousel-image 
+                                              src={image2} 
+                                              header="Second Card"
+                                              description="Second card accessible decription."
+                                              href="javascript:void(0);"></lightning-carousel-image>
+                                              <lightning-carousel-image  
+                                              src={image3} 
+                                              header="Third Card"
+                                              description="Third card accessible decription."
+                                              href="javascript:void(0);"></lightning-carousel-image>
+                                              </lightning-carousel>
+        </div>
+    </div>
+</template>

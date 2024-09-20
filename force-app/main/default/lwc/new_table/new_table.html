@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <table>
+           
+        <thead>
+            <tr>
+                <th> name</th>
+                <td> label</td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <template for:each={subscriptionsTable} for:item="sub">
+            <tr key={sub.id}>
+                <td>    </td>
+                
+            </tr>
+            
+            <tr key={sub.id}>
+                <td>
+                    <table>
+                        <th>
+                            Contacts name
+                        </th>
+                        <tbody>
+                            <tr>
+                                <td> Name1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </template>
+        </tbody>
+           
+        </table>
+    </lightning-card>
+    
+</template>

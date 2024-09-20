@@ -1,0 +1,38 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="2">
+            <lightning-card title="Account Records">
+                <template for:each={accounts.data} for:item="actObj" for:index="index">
+                    <p key={actObj.Id} class="slds-p-horizontal_small">
+                        <a href="#" onclick={handleClick} data-accountid={actObj.Id}>{actObj.Name}</a>
+                    </p>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+   <lightning-layout-item padding="around-small" size="10">
+  
+    <c-contactrecords account-id={accountids1}></c-contactrecords>
+    <c-opportunity-record-list account-id={accountids1} > </c-opportunity-record-list>
+</lightning-layout-item>
+</lightning-layout>
+</template>
+
+
+<!-- <template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="2">
+    <lightning-card>
+        <template for:each={accounts.data} for:item="actobj" for:index="index">
+            <p key={accounts.Id} class="slds-p-horizontal_small"></p>
+            <a key={accounts.Id} onclick={handleaccounts} data-account-id={actobj.Id}> {actobj.Name} </a>
+            <lightning-button class="slds-p-horizontal_small" key={accounts.Id} onclick={handleaccounts} data-account-id={actobj.Id}>{actobj.Name}</lightning-button> -->
+        <!-- </template>
+        </lightning-card>
+        </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout-item padding="around-small" size="10">
+            <c-opportunity-record-list account-id={accountids1}></c-opportunity-record-list>
+            </lightning-layout-item>
+      
+   
+</template> -->

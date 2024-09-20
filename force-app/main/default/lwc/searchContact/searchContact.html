@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  title="Search Contact - WIRE ">
+        <lightning-input label="Enter the search Text " type="search" value={searchKey} onchange={handleonchange}></lightning-input>
+        <template if:true={contact.data}>
+            <template for:each={contact.data} for:item="cont">
+                <p key={cont.id}>{cont.Name}</p>
+            </template>
+        </template>  
+        <template if:true={contact.error}>
+            sorry cannot display your records due to the {contact.error}.please try later. 
+        </template>
+        
+
+
+    </lightning-card>
+    
+</template>

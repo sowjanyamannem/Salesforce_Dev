@@ -1,0 +1,10 @@
+<aura:component controller="Aura_Axpe">
+    <aura:attribute type="List" name="Contactobj"/>
+    <aura:attribute name="mycolumn" type="List"/>
+    <aura:handler name="init"  value="{!this}" action="{!c.fetchcontact}"/>
+    <lightning:datatable data="{!v.Contactobj}"
+                         columns="{!v.mycolumn}"
+                         KeyField="id"
+                         hideCheckboxColumn="true"/>
+  	
+</aura:component>

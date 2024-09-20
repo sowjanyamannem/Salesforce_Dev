@@ -1,0 +1,83 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <div class="slds-form-element__control">
+                    <lightning-input type="text" 
+                                    name="search"
+                                    value={Searchvalue}
+                                    label="Your Trip Location"     
+                                    onchange={handlestateName}>
+                    </lightning-input>
+    
+                <template   for:each={totalListing}   for:item="item"  >
+                    <div key={item.Id}>
+                        <lightning-layout>
+                            <lightning-layout-item>
+                                <div class="slds-col slds-large-size_6-of-12 ">
+                                    <lightning-carousel auto-scroll if:true={item.url}>
+                                       <template for:each={item.url} for:item="url">
+                                           <lightning-carousel-image key={item.Id} src={url}
+                                                          style="width: 360px;  height:150px;">
+                                           </lightning-carousel-image>
+                                       </template>
+                                    </lightning-carousel>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                                
+                        <p>{item.Name}<br/>
+                            {item.Duration}<br/>
+                        {item.Category}<br/>                                               
+                        {item.Country}<br/>
+                        {item.State}<br/>
+                        {item.Street}<br/>
+                        </p>
+                    </div>
+                </template>
+
+
+                
+                    
+
+
+
+            
+                <div slot="footer" class="slds-var-m-vertical_medium">
+                    <div class="slds-m-around_medium">
+                        <p class="slds-m-vertical_medium content">
+                                 Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+                                 Page {page} of {totalPage}. </p>
+                        <c-paginator onprevious={previousHandler} onnext={nextHandler}></c-paginator>
+                    </div>
+                    <!-- <c-pagnation records={totalListing} onupdate={updateListingHandler}></c-pagnation> -->
+                </div>
+
+            </div>
+        </div> 
+        
+        
+            
+    
+        <lightning-button label="Go" 
+                        variant="Neutral" 
+                        onclick={handleSearch}>
+        </lightning-button>
+
+        <!-- <div class="slds-m-around_medium">
+            <div class="slds-form-element__control">
+                    <lightning-input type="text" 
+                                    label="Keyword Search" 
+                                    onchange={handlekeywordName} ></lightning-input>
+            </div>
+        </div> 
+
+        <lightning-layout-item size="12" small-device-size="2" medium-device-size="2" large-device-size="2" padding="around-small">
+        <lightning-button label="Go" 
+        variant="Neutral" 
+        onclick={handleKeyword}></lightning-button>
+        </lightning-layout-item>
+        -->
+       
+    
+    </lightning-card>
+</template>

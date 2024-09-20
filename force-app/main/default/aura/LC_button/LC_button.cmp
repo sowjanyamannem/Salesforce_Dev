@@ -1,0 +1,13 @@
+<aura:component >
+    <lightning:buttonGroup >
+             <lightning:button label="New" iconName="standard:account" variant="success"/>
+        <lightning:buttonIcon  iconName="utility:apex_plugin" alternativeText="down"/>
+    <lightning:buttonMenu  iconName="utility:down"  alternativeText="down">
+        <lightning:menuItem  label="new opportunity"/>
+        <lightning:menuItem  label="new case"/>
+        <lightning:menuItem label="new contact"/>
+        
+    </lightning:buttonMenu>
+   </lightning:buttonGroup>
+	
+</aura:component>

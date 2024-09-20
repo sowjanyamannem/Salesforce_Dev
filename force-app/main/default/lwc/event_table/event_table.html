@@ -1,0 +1,179 @@
+<template>
+    <!-- <div class="slds-size_small">
+    <div   class="container">
+    <lightning-card title="Events">
+        <template if:true={tableData}> -->
+            <!-- <div class="myTable"> -->
+            <!-- <lightning-datatable
+            key-field="Id"
+            data={data}
+            columns={columns}
+            hide-checkbox-column
+            ></lightning-datatable> -->
+        <!-- </div> -->
+        <!-- </template> -->
+<!--        
+    </lightning-card>
+</div>
+</div> -->
+
+<!-- <template>
+    <p>These layout items specify <code>size="4"</code>, or 4 columns of a 12 column grid. Each item occupies 33.33% of the width.</p>
+<div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="4" padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                <img src={} alt="Trailhead logo" />
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="4" padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">2</div>
+        </lightning-layout-item>
+        <lightning-layout-item size="4" padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">3</div>
+        </lightning-layout-item>
+        <lightning-layout-item size="4" padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">4</div>
+        </lightning-layout-item>
+    </lightning-layout>
+</div>
+</template> -->
+
+
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        <!-- Art Event Card -->
+        <template if:true={variableband}>
+        <template if:true={variableveena}>
+        <template if:true={variabledata}>
+        <div class="column">
+        <div class="card">
+            <template if:true={detailsdataevent2}>
+                    <h2>Art</h2>
+                        <img src={artLogo}  />
+                
+                    <p>Art event is an event can enjoy and do the arts from joy of learning </p>
+                    
+                    <lightning-button variant="brand" label="Book" onclick={handleClickart} data-eventname="art"></lightning-button>
+                    </template>
+                    <template if:true={eventdatas2}>
+                        <template for:each={eventdatas2} for:item="arts" for:index="index">
+                          <div key={arts.Id}>
+                            <template for:each={arts.details__r} for:item="arts1" for:index="index">
+                                <img key={arts1.Id} src={artLogo}  />
+                                <li key={arts1.Id}>
+                                    {arts1.Name}
+                                </li>
+                            </template> 
+                          </div>
+                        </template>
+                    </template>
+                </div>
+        </div>
+    </template>
+</template>
+  </template>
+    
+    <!-- Veena Event Card -->
+    <template if:true={variableband}>
+     <template if:true={variableart}>
+    <template if:true={variabledata}>
+        <div class="column">
+        <div class="card">
+          <template if:true={detailsdataevent1}>
+
+                <h2>Veena</h2>
+            
+                <img src={veenaLogo}  />
+                
+                <p>Music is the relax to the mind and gives the pease to the mind.</p>
+              
+                <lightning-button variant="brand" label="Book" onclick={handleClickveena} data-eventname="veena"></lightning-button>
+            </template>
+            <template if:true={eventdatas1}>
+                <template for:each={eventdatas1} for:item="veen" for:index="index">
+                    <div key={veen.Id}> 
+                        <template for:each={veen.details__r} for:item="veen1" for:index="index">
+                            <img key={veen1.Id} src={veenaLogo} class="card-img-top" alt="..."/>   
+                            <li key={veen1.Id} >
+                                {veen1.Name}
+                            </li>
+                        </template>
+                    </div>
+                </template>
+            </template>
+            </div>
+        </div>
+    </template>
+    </template>
+    </template>
+     <!-- Comedy Event Card -->
+      <template if:true={variableband}>
+     <template if:true={variableart}> 
+     <template if:true={variableveena}>
+        <div class="column">
+        <div class="card">
+            
+            <template if:true={detailsdataevent}>
+                    <img src={comedyLogo}  class="card-img-top" alt="...">
+                  
+                    <span title="Comedy">Comedy</span>
+                    <p> Laugh is good to the health, comedy is an art and enjoy it.</p>                
+                    <lightning-button variant="brand" label="Book" onclick={handleClickcomedy} data-eventname="comedy"></lightning-button> 
+                    </template>      
+                <template if:true={eventdatas}>
+                    <template for:each={eventdatas} for:item="con" for:index="index">
+                             <!-- Use a unique key for the top-level iteration -->
+                        <div key={con.Id}>  
+                            <template for:each={con.details__r} for:item="con1" for:index="index1">
+                                <img key={con1.Id} src={comedyLogo} class="card-img-top" alt="..."/>   
+                                <li key={con1.Id}>
+                                    {con1.Name}
+                                </li>
+                            </template>
+                        </div>
+                    </template>
+                </template>
+            
+                </div>
+        </div>
+    </template>
+    </template>
+    </template>
+    <!-- Band Event Card -->
+    <template if:true={variableart}>
+    <template if:true={variableveena}>
+    <template if:true={variabledata}>
+    <div class="column">
+      <div class="card">
+        <template if:true = {detailsdataevent3}>
+        <h2>Band</h2>
+                <img src={bandLogo}/>
+                <br></br>
+                <p>band is the music can enjoy the songs from the group of people.</p>
+                <br></br>
+                <lightning-button variant="brand" label="Book" onclick={handleClickband} data-eventname="band"></lightning-button>
+                </template>
+                <template if:true={eventdatas3}>
+                    <template for:each = {eventdatas3}  for:item="bands" for:index="index">
+                        <div key={bands.Id}>
+                            <template for:each={bands.details__r} for:item="band1" for:index="index">
+
+                                <img key={band1.Id} src={bandLogo}/>
+                                <li key={band1.Id}>
+                                    {band1.Name}
+                                </li>
+                            </template>
+                        </div>
+                    </template>
+                </template>
+            </div>
+    </div>
+  </template>
+  </template>
+  </template>
+ 
+  </div>
+
+</template>
+

@@ -1,0 +1,109 @@
+<template > 
+    <lightning-card title="lightning-Path" icon-name="standard:status-path">
+       <lightning-progress-indicator current-step={currentvalues} type="path" varient="base" >
+           <lightning-progress-step label="Personal Information" value="1" onclick={handleOnStepClick}></lightning-progress-step>
+           <lightning-progress-step label="Education Details" value="2" onclick={handleOnStepClick}></lightning-progress-step>
+           <lightning-progress-step label="work Information" value="3" onclick={handleOnStepClick}></lightning-progress-step>
+        </lightning-progress-indicator>
+        <template if:true={isStepOne}>
+            Personal Information
+            <lightning-layout  multiple-rows>
+               
+                <lightning-layout-item  padding="around-small" size="6">
+                    <lightning-input  label="first name" required="Please Enter the First Name"    value={firstname} placeholder="Enter the First Name"  onchange={handlefn}></lightning-input>
+                    <lightning-input label="Last Name"  required value={LastName} placeholder="Enter Last Name"  onchange={handleln}></lightning-input>
+                    <lightning-input  label="Mother Name"  required value={MotherName} onchange={handlemn}></lightning-input>
+                    <lightning-input  label="Father Name" required="Please Enter the Father Name" value={FatherName} onchange={handleFathern}></lightning-input>
+                </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                    <lightning-input label="Phone" required="Please Enter the Phone" value={Phone}  onchange={handlep}></lightning-input>
+                    <lightning-input label="Email" class="validate" type="email"  pattern="[A-Za-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,}$" message-when-pattern-mismatch="Please enter a valid email" required value={Email}  onchange={handleemail}></lightning-input>
+                    <lightning-input label="PAN number"  required value={PANnumber} onchange={handlepan}></lightning-input>
+                    <lightning-input label="Aadhar" required="Please Enter the Aadhar number" value={Aadhar}  onchange={handleaadhar}></lightning-input>
+                    <lightning-textarea label="Address" class="validate" type="text" pattern="[A-Za-z0-9._-]"  message-when-pattern-mismatch="Please enter a valid Address" required value={Address}  onchange={handleaddress}></lightning-textarea>
+                <!-- <lightning-button label="Save" value={} onclick={handlesave}></lightning-button> -->
+        
+              </lightning-layout-item>
+            <!-- </div> -->
+            </lightning-layout>
+            </template>
+            <template if:true={isStepTwo}>
+                <div>
+                    Education Details
+                        <lightning-layout>
+                                <lightning-layout-item  padding="around-small" size="6">
+                                <lightning-input label="Tenth school Name" required="Please Enter the School Name" value={TenthschoolName} onchange={handletsc}></lightning-input>
+                                <lightning-input label="Tenth Percentage"  required value={TenthPercentage} onchange={handletp}></lightning-input>
+                                <lightning-input label="Inter college Name"  required="Please Enter the College Name"  value={IntercollegeName} onchange={handleicn}></lightning-input>
+                                <lightning-input label="Inter Percentage"  required  value={InterPercentage} onchange={handleip}></lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item  padding="around-small" size="6">
+                                <lightning-input label="Btech College Name"  required  value={BtechCollegeName} onchange={handlebcn}></lightning-input>
+                                <lightning-combobox name="branch" required="Please Select the Branch" label="Branch" value={selectedValue} onchange={handlebranch} options={options}></lightning-combobox>
+                                <br>
+                                <h3>Skills</h3>
+                                <lightning-input-rich-text    label="Skills" class="validate" value={Skills} onchange={handleskills}></lightning-input-rich-text>
+                                </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </template>
+            <template if:true={isStepThree}>
+                <div>
+                    work Information
+                        <lightning-layout>
+                            <lightning-layout-item  padding="around-small" size="6">
+                                <lightning-input required="Please Enter the current package" label="Current Package" value={CurrentPackage}  onchange={handlecp}></lightning-input>
+                                <lightning-input label="current designation"  required  value={currentdesignation} onchange={handlecd}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item  padding="around-small" size="6">
+                                <lightning-input label="Experience"  required value={Experience} onchange={handleexp}></lightning-input>
+                                <lightning-input required="Please Enter the  Domain" label="Domain" value={Domain}  onchange={handledomain}></lightning-input>
+                                <lightning-input label="expeceted CTC"  required value={expecetedCTC} onchange={handlectcssss}></lightning-input>
+                               <div  class="slds-box slds-p-top_small" style="background-color: white; position: relative;">
+                                <template if:true={showSpinner} >
+                                    <lightning-spinner alternative-text="Loading" size="medium" class="spinnerClass"></lightning-spinner>
+                                </template>
+                                <lightning-input type="file" onchange={onFileUpload} required name="uploadFile" label="Upload File"  multiple>  
+                                </lightning-input> 
+                                <template  if:true={filesData}>
+                                <template for:each={filesData} for:item="imgName" for:index="index">
+                                    {imgName.fileName}
+                                    <span key={imgName.fileName} data-id={index} onclick={removeReceiptImage} class="removeImage">X</span> &nbsp;
+                                </template>
+                                </template>
+                            </div>
+                               
+
+                                
+                                    
+                               
+                            </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </template>
+            <!-- <template if:true={isStepfour}>
+                <div>
+                    qulified
+                </div>
+            </template>
+            <template if:true={isStepfive}>
+                <div>
+                    complete
+                </div>
+            </template> -->
+           
+            <template if:true={isEnablePrev}>
+                <lightning-button variant="base" label="Back" onclick={handlePrev}></lightning-button>
+            </template>
+            <template if:true={isEnableNext}>
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </template>
+            <template if:true={isEnableFinish}>
+                <lightning-button label="Finish" variant="brand" onclick={handleFinish}></lightning-button>
+            </template>
+            
+           
+        <!-- <br>
+		Selected Value is : <b>{selectedvalue}</b> -->
+    </lightning-card>
+</template>

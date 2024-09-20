@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+    <table  class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <!--Header Part-->
+            <tr>
+                <th>Account Name</th>
+                <th>Contact Name</th>
+            </tr>
+        </thead>
+            <!--Body Part-->
+            <template for:each={AccountList} for:item="item" for:index="indexVar">
+                <tr key={item.Id}>
+                    <td>
+                        <div>
+                            {item.Name}
+                        </div>
+                    </td>
+                    <template for:each={item.Contacts} for:item="conitem" >
+                    <td key={conitem.id}>  
+                         <div> {conitem.LastName}
+
+                        </div>
+                    </td>
+                </template>
+                    
+                </tr>
+            </template>
+    </table>
+</lightning-card>
+</template>

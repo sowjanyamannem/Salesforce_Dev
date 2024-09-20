@@ -1,0 +1,74 @@
+/* .datatable-orange{
+    color:#fff;
+    background-color:#e06000;
+  }
+  .datatable-orange:hover{
+    color:#000;
+    background-color:#e06000;
+  } */
+  /* .myTable table>thead .slds-cell-fixed.slds-has-button-menu, .myTable table>thead .slds-cell-fixed.slds-has-button-menu:hover{
+    background: antiquewhite;
+  } */
+
+/* .container { */
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the container covers the entire viewport height */
+    /* padding: 20px; */ 
+    /* margin: 0 auto; */
+     /* Center-aligns the container horizontally */
+    /* max-width: 1200px; */
+     /* Adjust the max-width to fit your design */
+    /* padding: 20px;
+    align-items: center;
+    /* justify-content: center; */
+
+/* } */
+
+/* .slds-table {
+  width: 100%; /* Adjust the width of the table as needed */
+/* } */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 500px) {
+  .column {
+    height: 15px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}

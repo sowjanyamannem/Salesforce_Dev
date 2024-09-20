@@ -1,0 +1,28 @@
+<aura:component >
+    <aura:attribute name="some" type="String" default="sam"/>
+    <aura:attribute name="age" type="Integer"/>
+    <aura:attribute  name="sal" type="Decimal"/>
+    
+    <lightning:card  title="Account" iconName="standard:account">
+        <aura:set attribute="actions">
+                 <lightning:buttonGroup>
+                     <lightning:button label="submit" onclick="{!c.callMe}"/>
+                     <lightning:button label="New" />
+                     <lightning:button label="Edit"/>
+                     <lightning:button label="New Contact" iconName="standard:contacts"/>
+                     <lightning:buttonIcon iconName="utility:close"  alternativeText="Close"/>
+                     <lightning:buttonMenu  iconName="utility:down"  alternativeText="down">
+                     <lightning:menuItem  label="Event"/>
+                     <lightning:menuItem  label="case"/>
+                     <lightning:menuItem  label="Task"/>
+                     </lightning:buttonMenu>
+            </lightning:buttonGroup>
+        </aura:set>
+        Employee Name:{!v.some} <p></p>
+        Emloyee Age:{!v.age} <p></p>
+        Employee Salary:{!v.sal}  <p></p>
+   
+    </lightning:card>
+    
+	
+</aura:component>

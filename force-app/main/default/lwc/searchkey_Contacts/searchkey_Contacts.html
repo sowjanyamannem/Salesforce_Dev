@@ -1,0 +1,18 @@
+<template>
+    <lightning-card > 
+        <lightning-input label="enter search text" type="search" value={SearchKey} onchange={onhandlechange}></lightning-input>
+        <template if:true={contact.data}>
+            <template for:each={contact.data} for:item="cont">
+                <p key={cont.id}>{cont.FirstName} </p>
+                <p key={cont.id}>{cont.LastName}</p>
+                <p key={cont.id}>{cont.Phone}</p>
+            </template>
+            <lightning-datatable key-field="Id" data={contact.data} columns={col}></lightning-datatable>
+        </template>
+        <template if:true={contact.error}>
+            Sorry can't display the contacts {contact.error}.
+
+        </template>
+    </lightning-card>
+    
+</template>

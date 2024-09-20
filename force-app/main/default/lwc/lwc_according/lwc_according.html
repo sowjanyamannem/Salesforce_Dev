@@ -1,0 +1,26 @@
+<template>
+        <!-- <lightning-card>
+            <p>{activeSectionsMessage}</p>
+            <lightning-accordion
+    allow-multiple-sections-open>
+    <template if:true={callbranch}>
+    <lightning-accordion-section name="A" label="Accordion Title A">
+        <p>Fill The Details Related the Completed Option</p>
+        <lightning-input label=" aadhar Number " required="Please fill the aadhar Number"  placeholder="aadhar Number" onchange={handlenumber}></lightning-input>
+        <lightning-input  label=" pan card "  required=" Fill the pan card number "  placeholder="pan card number" onchange={handlethecard}></lightning-input>
+        <lightning-input  label="id Number"  onchange={handleid}   ></lightning-input>
+    </lightning-accordion-section>
+    </template>
+    </lightning-accordion> 
+
+        </lightning-card> -->
+        <div class style="background-color: white;">
+        
+            <lightning-record-edit-form label="Parent Account" object-api-name="Account"  id="createAccountForm" >
+                <lightning-input-field field-name="ParentId" variant="label-hidden" onchange={handleAccountSelection} required> </lightning-input-field>
+            </lightning-record-edit-form>
+        </div>
+
+    
+    
+</template>

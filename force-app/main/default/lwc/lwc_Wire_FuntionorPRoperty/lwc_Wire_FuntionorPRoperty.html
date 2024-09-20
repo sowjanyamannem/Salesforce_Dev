@@ -1,0 +1,28 @@
+<template>
+
+    <lightning-card title="Wire a Property or Funtion">
+       
+       
+        <lightning-input type="search" label="Enter name to search" value={searchkey}  onchange={searchme}></lightning-input>
+         <!-- Wire a Property -->
+         <!-- <lightning-pill> -->
+             
+        <template  if:true={contact.data} >
+             <template for:each={contact.data} for:item="con">
+                <p key={con.id}>{con.Name}</p>
+                <p key={con.id}>{con.Phone}</p>
+                <p key={con.id}>{con.Email}</p>
+
+             </template>
+            
+
+         </template>
+         <template if:true={contact.error}>
+             Sorry we cannot display the record due to {contact.error}
+         </template>
+          <!-- Wire a Function -->
+   
+        <!-- </lightning-pill> -->
+    </lightning-card>
+    
+</template>

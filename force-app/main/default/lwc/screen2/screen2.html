@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Select a Payment GateWay for Subscription" icon-name="custom">
+        <div>
+            <lightning-radio-group required="Complete this field." name="select Payment Gateway"
+                label="Select Payment Gateway" options={options} value={True} type="radio"></lightning-radio-group>
+
+            <br />
+            <div if:true={True}>
+                True: <b>{Test}</b>
+            </div>
+        </div>
+        <br></br>
+        <div class="slds-clearfix">
+            <div class="slds-float_right">
+                <lightning-button label="Next" onclick={navigatetonext2}></lightning-button>
+                <lightning-button label="Cancle" onclick={navigatetocancle}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

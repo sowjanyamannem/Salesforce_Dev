@@ -1,0 +1,158 @@
+<template>
+    <lightning-card>
+
+        <lightning-layout>
+            <lightning-layout-item>
+                <div>
+                    <lightning-button label="With URL " onclick={handleurl} variant={colorleft}></lightning-button>
+                    <lightning-button label="With OUT URL" onclick={handlenoturl} variant={colorright}>
+                    </lightning-button>
+
+                    <table>
+                        <tr>
+                            <th class="slds-size_1-of-6 " scope="col">First Name</th>
+                            <th class="slds-size_1-of-6 " scope="col">Last Name</th>
+                            <th class="slds-size_1-of-6 " scope="col">Email</th>
+                            <template if:true={itsurl}>
+                                <th class="slds-size_1-of-6 " scope="col">URL's</th>
+
+                            </template>
+                            <th class="slds-size_1-of-6 " scope="col">edit</th>
+                            <th class="slds-size_1-of-6 " scope="col">delete</th>
+                        </tr>
+                        <template if:true={itsnoturl}>
+                            <template for:each={currenturls.withouturl} for:item="contacts1" for:index="indexvar">
+                                <!-- <div key={contacts1.Id} ><h1>{contacts1.LastName}</h1></div> -->
+                                <tr key={contacts1.Id}>
+
+
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.FirstName}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="FirstName" data-id={contacts1.Id}
+                                                onchange={handleEdit} value={contacts1.FirstName}
+                                                varient="label-hiddin"></lightning-input>
+                                        </template>
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.LastName} </template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="LastName" data-id={contacts1.Id}
+                                                onchange={handleEdit} value={contacts1.LastName} varient="label-hiddin">
+                                            </lightning-input>
+                                        </template>
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.Email}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="Email" data-id={contacts1.Id}
+                                                value={contacts1.Email} onchange={handleEdit}></lightning-input>
+                                        </template>
+                                    </td>
+                                    <td class="slds-size_1-of-6">
+                                        <lightning-button-icon data-id={contacts1.Id} onclick={editContact}
+                                            icon-name="utility:edit" variant="bare" alternative-text="edit">
+                                        </lightning-button-icon>
+                                    </td>
+                                    <td class="slds-size_1-of-6">
+                                        <lightning-button-icon data-id={contacts1.Id} icon-name="utility:delete"
+                                            variant="bare" alternative-text="Delete" onclick={deleteContact}
+                                            class="slds-m-left_xx-small" title="Delete">
+                                        </lightning-button-icon>
+                                    </td>
+
+                                    <!-- <td>
+                            <lightning-input label="URL" data-id={contacts1.Id} value={contacts1.URL} ></lightning-input>
+                        </td> -->
+
+                                </tr>
+
+                            </template>
+                        </template>
+
+                        <template if:true={itsurl}>
+                            <template for:each={currenturls.withurl} for:item="contacts1" for:index="indexvar">
+                                <!-- <div key={contacts1.Id} ><h1>{contacts1.LastName}</h1></div> -->
+                                <tr key={contacts1.Id}>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.FirstName}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="FirstName" data-id={contacts1.Id}
+                                                onchange={handleEdit} value={contacts1.FirstName}
+                                                varient="label-hiddin"></lightning-input>
+                                        </template>
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.LastName}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="LastName" data-id={contacts1.Id}
+                                                value={contacts1.LastName} onchange={handleEdit} varient="label-hiddin">
+                                            </lightning-input>
+                                        </template>
+
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.Email}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="Email" data-id={contacts1.Id}
+                                                value={contacts1.Email} onchange={handleEdit}></lightning-input>
+                                        </template>
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <template if:false={contacts1.isedit}>{contacts1.URL_field__c}</template>
+                                        <template if:true={contacts1.isedit}>
+                                            <lightning-input label="URL" data-id={contacts1.Id}
+                                                value={contacts1.URL_field__c} onchange={handleEdit}></lightning-input>
+                                        </template>
+                                    </td>
+                                    <td class="slds-size_1-of-6">
+                                        <lightning-button-icon data-id={contacts1.Id} onclick={editContact}
+                                            icon-name="utility:edit" variant="bare" alternative-text="edit">
+                                        </lightning-button-icon>
+                                    </td>
+
+                                    <td class="slds-size_1-of-6">
+                                        <lightning-button-icon data-id={contacts1.Id} icon-name="utility:delete"
+                                            variant="bare" alternative-text="Delete" onclick={deleteContact}
+                                            class="slds-m-left_xx-small" title="Delete">
+                                        </lightning-button-icon>
+                                    </td>
+
+                                </tr>
+                            </template>
+
+                        </template>
+
+                    </table>
+
+
+                    <div class="slds-align_absolute-center">
+                        <lightning-button if:true={cfield} label="Cancel" title="Cancel" onclick={handleCancel}
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                        <lightning-button if:true={field} type="submit" variant="brand" label="Save" title="Save"
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                    </div>
+
+
+                    <!-- <template if:true={contactNames}> -->
+
+                    <!-- </template> -->
+
+
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+
+
+    </lightning-card>
+
+</template>

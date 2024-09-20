@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Select the Stripe Customer" icon-name="custom">
+        <div class="slds-box">
+            <legend class="slds-form-element__legend slds-form-element__label">
+                <abbr class="slds-required" title="required">*</abbr>Select a Customer
+            </legend>
+            <template class="slds-required" for:each={customerData} for:item="pgc">
+                <span key={pgc.id}>
+                    <lightning-input type="radio" required label={pgc.Name} name="radio-1" value={selectedCustomer}
+                        onchange={saveTheValue}></lightning-input>
+                </span>
+            </template>
+            <br></br>
+            <div class="slds-clearfix">
+                <div class="slds-float_right">
+                    <lightning-button label="Create Customer" onclick={navigatetochild}></lightning-button>
+                    <lightning-button label="Previous" ></lightning-button>
+                    <lightning-button label="Next"></lightning-button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

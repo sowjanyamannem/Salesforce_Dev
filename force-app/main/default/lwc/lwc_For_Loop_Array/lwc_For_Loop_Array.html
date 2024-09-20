@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title=" Display the cities by using the for each loop array ">
+        <template  for:each={cities}  for:item=a>
+          
+            <p key={a}>{a}</p>
+        </template>
+    </lightning-card>
+    <lightning-card title="Display the cities by using the for each iteration ">
+        <template iterator:item={cities} >
+            <p key={item.value}>{item.value}</p>
+        </template>
+    </lightning-card>
+    <lightning-card title="complex Json Data">
+        Student Name : {student.Name}
+        Student Age :{student.age}
+        Student Branch : {student.branch}
+        Student city:{student.city}
+
+    </lightning-card>
+     
+</template>

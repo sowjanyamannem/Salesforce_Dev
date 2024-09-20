@@ -1,0 +1,21 @@
+<template>
+    <article class="slds-card" style="padding:20px"> 
+    
+    <p style="color:blueviolet;font-size:24px">Custom Reusable Lookup Demo - LWC</p>
+    
+    <!--Custom Lookup with Pre-Populate Value for  Object-->
+    <!-- <c-search_accounts_with_contacts icon-name="standard:contact   "
+                         s-object-api-name="Contacts"
+                         label="Owner [Pre-Populate Demo]"
+                         onlookupupdate={lookupRecord}
+                         default-record-id='0052y000001PmqDAAS'
+                         placeholder="type here..."></c-search_accounts_with_contacts> -->
+   <br/>
+   <!--Custom Lookup without Pre-Populate Value for account Object-->
+    <c-search_accounts_with_contacts icon-name="standard:account"
+                         s-object-api-name="account"
+                         label="My Fev Account"
+                         onlookupupdate={lookupRecord}
+                         placeholder="Search Account here..."></c-search_accounts_with_contacts>
+     </article>                    
+</template>

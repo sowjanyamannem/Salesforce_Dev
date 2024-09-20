@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+    <!-- <lightning-input label="FirstName" onchange={handleNameChange}  >  </lightning-input>
+    <lightning-input label="LastName"  onchange={handleNameChange}></lightning-input>-->
+    <lightning-combobox name="Status" label=" Case Status " value={values} options={teams} onchange={handlestatus}></lightning-combobox>                  
+
+    <!-- <lightning-combobox label="Status" onchange={handlestatus}></lightning-combobox> -->
+    <lightning-combobox label="Case Origin" onchange={handlecaseOrigin} value={caseOrigin} options={options}></lightning-combobox> 
+    <!-- <lightning-combobox label="Priority" onchange={handlecasepriority} value={casepriority} options={options2}></lightning-combobox>  -->
+    <lightning-input label="Subject" onchange={handlesubject}> </lightning-input>
+    <!-- <lightning-input-rich-text title="Description" onchange={handledescription}></lightning-input-rich-text> -->
+    <lightning-button label="save" onclick={handlesavedata}></lightning-button>
+</lightning-card>
+</template>

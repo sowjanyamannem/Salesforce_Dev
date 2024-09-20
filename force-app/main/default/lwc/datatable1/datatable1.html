@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Contact List View">
+        <table>
+            <!--Header Part-->
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete </th>
+            </tr>
+            <!--Body Part-->
+            <template for:each={contactList} for:item="item" for:index="indexVar">
+                <tr key={item.Id}>
+                    <td>
+                        <div>
+                            {item.FirstName}
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            {item.LastName}
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            {item.Email}
+                        </div>
+                    </td>
+                    <td>
+                        <div> {item.Mobile}</div>
+                    </td>
+
+                    <td>
+                        <lightning-button-icon icon-name="utility:edit" variant="container" alternative-text="edit"
+                            title="Edit" onclick={editcontacts} data-recid={item.id}></lightning-button-icon>
+
+                    </td>
+
+
+                    <td>
+                        <lightning-button-icon icon-name="utility:delete" variant="container" title="delete"
+                                onclick={handledelete} alternative-text="delete" data-recid={item.id}></lightning-button-icon>
+                    </td>
+
+                </tr>
+
+            </template>
+
+
+        </table>
+    </lightning-card>
+
+</template>

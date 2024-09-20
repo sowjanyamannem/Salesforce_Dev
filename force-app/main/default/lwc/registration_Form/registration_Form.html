@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <lightning-input type="text" label="Registration Name" onchange={handlename} ></lightning-input>
+        <lightning-input type="text" label="email" onchange={handleemail}></lightning-input>
+        <lightning-input type="search" label="Search Event" value={searchKey} onchange={handleSearchKeyChange}></lightning-input>
+        <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+        <template if:true={accounts}>
+            <lightning-combobox label="Select event" value={selectedEventId} options={accountOptions} onchange={handleAccountChange}></lightning-combobox>
+
+            <!-- <lightning-combobox label="Select Event" value={selectedEventId} options={EventOptions} onchange={handleEventChange}></lightning-combobox> -->
+
+        </template>
+        <lightning-combobox name="Registration Status" required="Please Select the Status" label="Registration Status" value={selectedValue} onchange={handlestatus} options={options}></lightning-combobox>
+        <lightning-button label="Create Record" onclick={handleCreateRecord}></lightning-button>
+        <!-- <lightning-button label="Navigate to Next" variant="brand" onclick={handleNext} ></lightning-button> -->
+    </lightning-card>
+</template>

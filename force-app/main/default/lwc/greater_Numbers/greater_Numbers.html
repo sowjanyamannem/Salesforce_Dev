@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Gratre of three numbers"> 
+        <lightning-input label="Enter the first number"  onchange={firstnumber} value={num1}></lightning-input>
+        <lightning-input label="Enter the Second number" onchange={secondnumber} value={num2}></lightning-input>
+        <lightning-input label="Enter the Third number"  onchange={thirdnumber} value={num3}></lightning-input>
+
+        <lightning-button-group >
+            <lightning-button label="calculate" onclick={calculateme}></lightning-button>
+            <lightning-button label="clear"  onclick={clearme}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+    
+</template>

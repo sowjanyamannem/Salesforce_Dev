@@ -1,0 +1,32 @@
+<template>
+    <lightning-card >
+        
+        
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="10 Th Marks ">
+            10th Marks !
+            <lightning-input  label="Marks" onchange={handlemarks}></lightning-input>
+            <lightning-input  label="Precentage" onchange={handlepercentage}></lightning-input>
+            <lightning-input  label="Hall Ticket" onchange={handleticket}></lightning-input>
+        </lightning-tab>
+        <lightning-tab label="Intermediat Marks ">
+             Pluse Two Marks !
+             <lightning-input label="First Inter Marks"  onchange={handlefirstinter}></lightning-input>
+             <lightning-input label="Second Inter Marks " onchange={handlesecondinter}></lightning-input>
+             <lightning-input label="Percentage of 1st inter Marks " onchange={handlefirstinterper}></lightning-input>
+             <lightning-input label="Percentage of 2nd inter Marks"  onchange={handlesecondinterper}></lightning-input>
+             <lightning-input label="Total Marks" onchange={handletotalmarks}></lightning-input>
+             <lightning-input label="Total percentage"  onchange={handletotalpercentage}></lightning-input>
+        </lightning-tab>
+        <lightning-tab label="Graduation Marks ">
+            Graduation Marks !
+            <lightning-input label="No of Creidts" onchange={handlecredits}></lightning-input>
+            <lightning-input label="percentage" onchange={handlebtechper}></lightning-input>
+        </lightning-tab>
+    </lightning-tabset>
+      <div>
+        <img src="https://www.softwebsolutions.com/wp-content/uploads/2021/03/salesforce-eco-system.jpg" alt="Girl in a jacket" width="500" height="600"> </div>
+        
+    </lightning-card>
+
+ </template>

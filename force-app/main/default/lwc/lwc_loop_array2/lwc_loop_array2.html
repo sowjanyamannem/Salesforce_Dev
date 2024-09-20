@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="simple-array"> 
+        <template for:each={envnum} for:item=ev >
+            <p key={ev}>{ev}</p>
+        </template>
+    </lightning-card>
+
+    ====================***********************====================
+
+    <lightning-card > 
+        <template iterator:item={envnum}>
+            <p key={item.value}> {item.value}</p>
+        </template>
+    </lightning-card>
+    ==========================************************======================
+   <lightning-card>
+     student name = {student.Name} <p></p>
+     student Age = {student.Age}    <p></p>
+     student city= {student.city}   <p></p>
+     student salary = {student.salary}  <p></p>
+   </lightning-card>
+
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item  padding="around-small"  size="6">
+               <lightning-input  label="first Name"  onchange={handlefirstname}></lightning-input>
+               <lightning-input label="Last Name"  onchange={handlelastname}></lightning-input>
+             </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input label="Phone"  onchangek={handlephone}></lightning-input>
+            <lightning-input label="Email" onchange={handleemail}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-button label="submit" onclick={handlebutton}></lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,148 @@
+<template>
+    <lightning-card>
+    <div class="slds-box slds-theme_default">
+    <div class="slds-form-element">
+        
+        <div class="slds-form-element__control">
+        <div class="slds-combobox_container">
+        <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+        <lightning-input type="search" label="Account" placeholder="selecte the Account" onchange={handleonchange} class="slds-var-p-left_small slds-var-p-right_small"></lightning-input>
+        </div>
+        <template lwc:if={showpillcontainer} >
+            <lightning-pill-container items={selectedRecords}  onitemremove={handleItemRemove}></lightning-pill-container>
+            </template>
+        <template  lwc:if={hasrecords}>
+        <div id="listbox-id-2" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox"  tabindex="0" aria-busy="false">
+        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+            <template for:each={searchoutput} for:item="output">
+        <li role="presentation"  key={output.Id} class="slds-listbox__item"  onclick={clickhandle}>
+        <div id="option16" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+        <span class="slds-media__figure slds-listbox__option-icon">
+        <span class="slds-icon_container slds-icon-standard-account">
+            <lightning-icon icon-name={iconName} size="small" alternative-text={output.Name} ></lightning-icon>
+        </span>
+        </span>
+        <span class="slds-media__body">
+        <span class="slds-listbox__option-text slds-listbox__option-text_entity"  data-recid={output.Id}>{output.Name}</span>
+        </span>
+        </div>
+        </li>
+    </template>
+        </ul>
+        </div>
+        </template>
+        </div>
+        </div>
+        </div>
+    </div>
+        </div>
+        <lightning-button  label="Get Contacts" variant="Brand" onclick={handletheonclickcont}> </lightning-button>
+            
+        <!-- <lightning-card title="Contact List View"> -->
+                             
+                <template   for:each={searchoutputcontacts} for:item="conoutput">
+
+                    <tr key={conoutput.Id}>
+                        
+                        <td>
+                            <lightning-input type="radio" value={conoutput.LastName} onchange={onchnagename} >                              
+                            </lightning-input>
+                        </td>
+                        <td>{conoutput.LastName}</td>
+                        <!-- <td>
+                            <lightning-input type="radio" value={conoutput.Email} >   
+                            </lightning-input>
+                            
+                        </td>
+                        <td>{conoutput.Email}</td> -->
+                        
+                    </tr>
+                </template>
+
+                
+           
+                <!-- <template>
+
+                </template> -->
+           
+        
+            <lightning-button  label="Get Opportunites" variant="Brand" onclick={handletheonclickoppo}> </lightning-button>
+               
+                <table >
+                    <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                        <div >
+                            <lightning-input onchange={handleAllSelected} type="checkbox"
+                                data-key="allCheckbox">
+                            </lightning-input>
+                        </div>
+                    </th>
+                        <!-- <th class="" scope="col">
+                            <div class="slds-truncate" title="Name"> 
+                              Opportunity Name
+                            </div>
+                        </th> -->
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Amount"> 
+                               Amount
+                            </div>    
+                        </th>
+                        <!-- <th>
+                            <div class="slds-p-around_medium lgc-bg">
+                                <lightning-button-menu alternative-text="Show menu">
+                                    <lightning-menu-item value="MenuItemOne" label="Menu Item One"></lightning-menu-item>
+                                    <lightning-menu-item value="MenuItemTwo" label="Menu Item Two"></lightning-menu-item>
+                                    <lightning-menu-item value="MenuItemThree" label="Menu Item Three"></lightning-menu-item>
+                                    <lightning-menu-item value="MenuItemFour" label="Menu Item Four"></lightning-menu-item>
+                                </lightning-button-menu>
+                            </div>
+                        </th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <template  for:each={searchoppor} for:item="opportu">
+                        <tr key={opportu.Id}  class="slds-hint-parent">
+                            <td>
+                                <div>
+                                    <lightning-input type="checkbox" value={opportu.Name} data-id={opportu.Id}
+                                        data-key="firstColumnCheckbox" onchange={handleCheckboxSelect}
+                                        name={opportu.Id}>
+                                    </lightning-input>
+                                </div>
+                            </td>
+                            <!-- <td >
+                                <lightning-input 
+                                type="checkbox" 
+                                checked={opportu.isSelected}
+                                onchange={handleCheckChange} 
+                                 value={opportu.index}
+                                 >
+                                </lightning-input>                                  
+                            
+                            </td> -->
+                            
+                                <!-- <th scope="col">
+                                    <div>{opportu.Name}</div>
+                                </th> -->
+                                
+                            <th scope="col">
+                               
+                                {opportu.Amount}
+                           
+                            </th>
+                            <th>
+                            <div class="slds-p-around_medium lgc-bg" key={opportu.Id}>
+                                <lightning-button-menu alternative-text="Show menu">
+                                    <lightning-menu-item value={opportu.Name} ></lightning-menu-item>
+                                </lightning-button-menu>
+                            </div>
+                        </th>
+                        </tr>
+                    </template>
+                </tbody>
+                </table>
+        <!-- </lightning-card> -->
+    </lightning-card>
+</template>

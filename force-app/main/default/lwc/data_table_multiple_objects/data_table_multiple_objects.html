@@ -1,0 +1,176 @@
+
+<template>
+    
+    <lightning-card  title="Related Accounts">
+       
+        <table>
+            <thead>
+           
+            <tr class="slds-line-height_reset">
+                <th class="slds-size_1-of-3 " scope="col">
+                    <div class="slds-truncate " title="Name">Name</div>
+                </th>
+                <th class="slds-size_1-of-3" scope="col">
+                    <div class="slds-truncate " title="Phone">Phone</div>
+                </th>
+                <th class="slds-size_1-of-3 " scope="col">
+                    <div class="slds-truncate " title="Fax">Fax</div>
+                </th>
+                 
+                 <!-- <th>Edit</th>
+                <th>Delete </th> -->
+              </tr>
+           </thead>
+        <tbody>
+            
+            <template for:each={accounts} for:item="account">
+                <tr key={account.Id} class="slds-hint-parent">
+                    <td  class="slds-size_1-of-3">
+                        
+                            {account.Name}
+                       
+                    </td>
+                    <td  class="slds-size_1-of-3">
+                        <div>
+                            {account.Phone}
+                        </div>
+                    </td>
+                    <td  class="slds-size_1-of-3">
+                        <div>
+                            {account.Fax}
+                        </div>
+                    </td>
+                    </tr>
+                    
+                <tr  key={account.Id} class="slds-hint-parent">        
+                     <td>                 
+                    <table class="inner-table">
+                        <thead>
+                            <tr>
+                                <th>Contacts Objects</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                                <tr  for:each={account.Contacts} for:item="contact1" key={contact1.Id}>
+                                    <td>{contact1.LastName}</td>
+                                    <!-- //<td>{innerRow.FieldB}</td> -->
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                </td>
+                    </tr> 
+
+                    <tr  key={account.Id} class="slds-hint-parent">        
+                        <td>                 
+                       <table class="inner-table">
+                           <thead>
+                               <tr>
+                                   <th>opportunitys Objects</th>
+                                   
+                               </tr>
+                           </thead>
+                           <tbody>
+                              
+                                   <tr  for:each={account.opportunitys} for:item="opp" key={opp.Id}>
+                                       <td>{opp.Name}</td>
+                                       <td>---------------------------</td>
+                                       <!-- //<td>{innerRow.FieldB}</td> -->
+                                   </tr>
+                               
+                           </tbody>
+                       </table>
+                   </td>
+                       </tr>
+                   
+                         <!-- <td colspan="2">    
+                         <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        contact Name
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={accounts} for:item="account"     >
+                                    <tr key={account.accRecord.Id} >
+                                        <td >
+                                            <div >
+                                                {account.accRecord.Name}
+                                            </div>
+                                        </td>
+                                        <td  class="slds-size_1-of-8">
+                                            <div>
+                                                {account.accRecord.Phone}
+                                            </div>
+                                        </td>
+                                        <td  class="slds-size_1-of-8">
+                                            <div>
+                                                {account.accRecord.Fax}
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        </template>
+                            </tbody>    
+                        </table>  -->
+                        
+                    <!-- </td> -->
+                
+                    <!-- <td>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Contact Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={accounts} for:item="account">
+                                    <tr key={account.contRecord.Id}>
+                                        <td>{account.contRecord.Name}</td>
+                                        <td>{account.contRecord.Email}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </td> 
+                    <td>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <th>Opportunity Name</th>
+                                     <th>Email</th> -->
+                                <!-- </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={accounts} for:item="account">
+                                    <tr key={account.oppRecords.Id}>
+                                        <td>{account.oppRecords.Name}</td>
+                                         <td>{account.contRecord.Email}</td> -->
+                                    <!-- </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </td>  --> 
+                     
+                     <!-- <td>
+                        <div> {item.AccountNumber}</div>
+                    </td> -->
+                
+               </template>
+          </tbody>
+        </table>
+    </lightning-card>
+
+     <!-- <lightning-card title="Accounts and Contacts" icon-name="standard:account">
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={columns}>
+        </lightning-datatable> 
+    </lightning-card> -->
+
+</template>
